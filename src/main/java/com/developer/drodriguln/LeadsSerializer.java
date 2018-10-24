@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 
-public class LeadsSerializer extends JsonSerializer<Lead> {
+class LeadsSerializer extends JsonSerializer<Lead> {
 
     @Override
     public void serialize(Lead value, JsonGenerator gen, SerializerProvider serializers) throws IOException {

@@ -15,7 +15,7 @@ class LeadsMarshaller {
     static List<Lead> unmarshal(File file) {
         try {
             SimpleModule module = new SimpleModule()
-                .addDeserializer(List.class, new LeadsDeserializer());
+                    .addDeserializer(List.class, new LeadsDeserializer());
             ObjectMapper mapper = new ObjectMapper()
                     .registerModule(module);
             return mapper.readValue(file, List.class);
@@ -32,7 +32,9 @@ class LeadsMarshaller {
                     .registerModule(module);
             ObjectNode objectNode = mapper.createObjectNode();
             objectNode.set(LEADS_KEY, mapper.valueToTree(leads));
-            return mapper.writeValueAsString(objectNode);
+            return mapper
+                    .writerWithDefaultPrettyPrinter()
+                    .writeValueAsString(objectNode);
         } catch (IOException e) {
             throw new IllegalStateException(String.format("Could not marshal the list of leads: [%s].", leads.toString()), e);
         }
