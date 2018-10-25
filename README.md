@@ -18,6 +18,6 @@ Please implement as a command-line java program.
 ## Run Instructions
 This is a maven project. So make sure that is installed, and then in your cmd or terminal window, run:
 1. "mvn package" to generate the fat jar.
-2. "java -jar leads-parser-1.0-shaded.jar <path to leads.json file>" (Note that leads.json is included in the root directory).
+2. "java -jar leads-parser-1.0-shaded.jar (path to leads.json)" (Note that leads.json is included in the root directory).
 
 You will see the log statements print in the console window to indicate its transformation from the source to its deduplicated output.
