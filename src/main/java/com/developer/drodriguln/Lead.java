@@ -7,7 +7,7 @@ import lombok.Value;
 
 import java.time.OffsetDateTime;
 
-@Value // Auto-generates getters, setters, toString(), equals(), etc.
+@Value // Auto-generates getters, toString(), equals(), etc.
 @AllArgsConstructor
 class Lead {
     @NonNull
